@@ -12,6 +12,33 @@ class ApplicationController < Sinatra::Base
     Trainer.all.to_json(include: :lessons)
   end
 
+  get "/trainers/:id" do
+    Trainer.find(params[:id]).to_json(include: :lessons)
+  end
+
+  get "/lessons" do
+    Lesson.all.to_json
+  end
+
+  get "/lessons/:id" do
+    Lesson.find(params[:id]).to_json
+  end
+
+  get "/dogs" do
+    Dog.all.to_json(include: :owners)
+  end
+
+  get "/dogs/:id" do
+    Dog.find(params[:id]).to_json(include: :owners)
+  end
+
+  get "/owners" do
+    Owner.all.to_json(include: :dogs)
+  end
+
+  get "/owners/:id" do
+    Owner.find(params[:id]).to_json(include: :dogs)
+  end
 end
 
 
