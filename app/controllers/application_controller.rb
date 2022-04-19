@@ -44,7 +44,6 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/appointments" do
-    binding.pry
     new_appointment = {**params, "lesson" => Lesson.find_by(title: params[:lesson]), "dog" => Dog.find_by(name: params[:dog])}
     DogClass.create(new_appointment).to_json
   end 
