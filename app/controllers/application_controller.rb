@@ -38,6 +38,18 @@ class ApplicationController < Sinatra::Base
   # Above, posts a lesson while recieving a trainer as a string and assigns appropriate value
 
 
+  ############## Dog Classes ################
+  get "/appointments" do
+    DogClass.all.to_json
+  end
+
+  post "/appointments" do
+    binding.pry
+    new_appointment = {**params, "lesson" => Lesson.find_by(title: params[:lesson]), "dog" => Dog.find_by(name: params[:dog])}
+    DogClass.create(new_appointment).to_json
+  end 
+
+
 
   ############### Dogs ############
 
