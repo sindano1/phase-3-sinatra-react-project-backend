@@ -43,6 +43,10 @@ class ApplicationController < Sinatra::Base
     DogClass.all.to_json
   end
 
+  get "/upcoming_appointments" do
+    DogClass.where(date: (Date.today)..(Date.today + 30))
+  end
+
   post "/appointments" do
     new_appointment = {**params, "lesson" => Lesson.find_by(title: params[:lesson]), "dog" => Dog.find_by(name: params[:dog])}
     DogClass.create(new_appointment).to_json
