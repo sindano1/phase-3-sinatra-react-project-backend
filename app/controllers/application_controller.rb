@@ -43,8 +43,8 @@ class ApplicationController < Sinatra::Base
     DogClass.all.to_json
   end
 
-  get "/upcoming_appointments" do
-    DogClass.where(date: (Date.today)..(Date.today + 30))
+  get "/upcoming-appointments" do
+    DogClass.where(date: (Date.today)..(Date.today + 30)).to_json
   end
 
   post "/appointments" do
