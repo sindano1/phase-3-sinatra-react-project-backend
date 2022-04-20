@@ -27,6 +27,18 @@ class ApplicationController < Sinatra::Base
     Lesson.find(params[:id]).to_json
   end
 
+  get "/lessons/Owner/:name" do
+    # as an Owner, "name" wants to see all their dogs lessons
+    specified_owner = Owner.find_by(name: params[:name])
+    specified_owner.dogs.map {|dog| dog.lessons}.flatten.uniq.to_json
+  end
+
+  get "/lessons/Trainer/:name" do
+    # as a Trainer, "name" wants to see all lessons they want to teach
+    specified_trainer = Trainer.find_by(name: params[:name])
+    specified_trainer.lessons.to_json   
+  end
+
   post "/lessons" do
     new_lesson = {**params, "trainer" => Trainer.find_by(name: params[:trainer])}
     Lesson.create(new_lesson).to_json
