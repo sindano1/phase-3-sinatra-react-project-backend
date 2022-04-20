@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_20_133955) do
+ActiveRecord::Schema.define(version: 2022_04_20_204541) do
 
   create_table "dog_classes", force: :cascade do |t|
-    t.datetime "date"
+    t.date "date"
     t.integer "lesson_id"
     t.integer "dog_id"
   end
