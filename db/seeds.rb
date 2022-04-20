@@ -16,20 +16,20 @@ l8 = Lesson.create(title: "UKC privates", content: "Be an agility champion", str
 puts "Lessons seeded."
 
 puts "Seeding dogs"
-d1 = Dog.create(name: "Fletcher", age: 6, breed: "GSD")
-d2 = Dog.create(name: "Bijou", age: 5, breed: "Lab")
-d3 = Dog.create(name: "Paxton", age: 4, breed: "GSD")
-d4 = Dog.create(name: "Lyra", age: 0.8, breed: "Aussie")
-d5 = Dog.create(name: "Hunter", age: 4.5, breed: "GSD")
-d6 = Dog.create(name: "Samus", age: 1.2, breed: "Samoyed")
-d7 = Dog.create(name: "Pants", age: 7, breed: "Aussie")
-d8 = Dog.create(name: "Marvel", age: 4, breed: "Aussie")
-d9 = Dog.create(name: "Tattle", age: 5, breed: "Aussie")
-d10 = Dog.create(name: "Shade", age: 2, breed: "Aussie")
-d11 = Dog.create(name: "Bari", age: 10, breed: "LGX")
-d12 = Dog.create(name: "Zito", age: 11, breed: "Lab")
-d13 = Dog.create(name: "Cricket", age: 10, breed: "LGX")
-d14 = Dog.create(name: "Chris", age: 2, breed: "Golden")
+d1 = Dog.create(name: "Fletcher", age: 6, breed: "germanshepherd")
+d2 = Dog.create(name: "Bijou", age: 5, breed: "labrador")
+d3 = Dog.create(name: "Paxton", age: 4, breed: "germanshepherd")
+d4 = Dog.create(name: "Lyra", age: 0.8, breed: "australian")
+d5 = Dog.create(name: "Hunter", age: 4.5, breed: "germanshepherd")
+d6 = Dog.create(name: "Samus", age: 1.2, breed: "samoyed")
+d7 = Dog.create(name: "Pants", age: 7, breed: "australian")
+d8 = Dog.create(name: "Marvel", age: 4, breed: "australian")
+d9 = Dog.create(name: "Tattle", age: 5, breed: "australian")
+d10 = Dog.create(name: "Shade", age: 2, breed: "australian")
+d11 = Dog.create(name: "Bari", age: 10, breed: "labrador")
+d12 = Dog.create(name: "Zito", age: 11, breed: "labrador")
+d13 = Dog.create(name: "Cricket", age: 10, breed: "labrador")
+d14 = Dog.create(name: "Chris", age: 2, breed: "retriever-golden")
 puts "dogs seeded."
 
 puts "Seeding dog classes"
