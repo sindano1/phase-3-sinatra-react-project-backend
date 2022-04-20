@@ -29,7 +29,7 @@ d10 = Dog.create(name: "Shade", age: 2, breed: "australian")
 d11 = Dog.create(name: "Bari", age: 10, breed: "labrador")
 d12 = Dog.create(name: "Zito", age: 11, breed: "labrador")
 d13 = Dog.create(name: "Cricket", age: 10, breed: "labrador")
-d14 = Dog.create(name: "Chris", age: 2, breed: "retriever-golden")
+d14 = Dog.create(name: "Chris", age: 2, breed: "golden")
 puts "dogs seeded."
 
 puts "Seeding dog classes"

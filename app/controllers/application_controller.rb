@@ -67,6 +67,21 @@ class ApplicationController < Sinatra::Base
     Dog.find(params[:id]).to_json(include: :owners)
   end
 
+  get "/dogs/Owner/:name" do
+    # as an Owner, "name" wants to see their dogs
+    specified_owner = (params[:category]).find_by(name: params[:name])
+    specified_owner.dogs.to_json
+  end
+
+  
+  get "/dogs/Trainer/:name" do
+    # as a Trainer, "name" wants to see the dogs enrolled in their lessons
+    specified_trainer = Trainer.find_by(name: params[:name])
+    specified_trainer_lessons = Lesson.where(trainer_id: specified_trainer.id)
+    specified_trainer_lessons.map{|lesson| lesson.dogs.uniq}.flatten.uniq.to_json    
+    # Dog.all.map{|dog| dog.owners}.uniq
+    # returns owners of all dogs
+  end
 
 
 
