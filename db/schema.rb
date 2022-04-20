@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_18_141416) do
+ActiveRecord::Schema.define(version: 2022_04_20_133955) do
 
   create_table "dog_classes", force: :cascade do |t|
     t.datetime "date"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2022_04_18_141416) do
     t.string "name"
     t.float "age"
     t.string "breed"
+    t.string "image"
   end
 
   create_table "lessons", force: :cascade do |t|

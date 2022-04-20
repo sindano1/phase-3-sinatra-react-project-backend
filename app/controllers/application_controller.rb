@@ -1,14 +1,10 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
-
-  
   
   # Add your routes here
   # get "/" do
   #   { message: "Good luck with your project!" }.to_json
   # end
-
-
 
   ########### Trainers ##############
   get "/trainers" do
@@ -35,7 +31,14 @@ class ApplicationController < Sinatra::Base
     new_lesson = {**params, "trainer" => Trainer.find_by(name: params[:trainer])}
     Lesson.create(new_lesson).to_json
   end
-  # Above, posts a lesson while recieving a trainer as a string and assigns appropriate value
+
+  patch "/lessons/:id" do
+    Lesson.find(params[:id]).update(params).to_json
+  end
+  
+  delete '/lessons/:id' do
+    Lesson.find(params[:id]).destroy.to_json
+  end
 
 
   ############## Dog Classes ################
@@ -77,6 +80,32 @@ class ApplicationController < Sinatra::Base
     Owner.find(params[:id]).to_json(include: :dogs)
   end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
