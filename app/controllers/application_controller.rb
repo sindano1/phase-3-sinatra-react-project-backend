@@ -71,6 +71,11 @@ class ApplicationController < Sinatra::Base
     # currently showing ALL appointments of a trainer
   end
 
+  get "/upcoming-appointments/Owner/:name" do
+    Owner.find_by(name: params[:name]).dogs.map {|dog| dog.dog_classes}.flatten.to_json
+    # currently showing ALL appointments of an owner
+  end
+
   post "/appointments" do
     new_appointment = {**params, "lesson" => Lesson.find_by(title: params[:lesson]), "dog" => Dog.find_by(name: params[:dog])}
     DogClass.create(new_appointment).to_json
