@@ -63,17 +63,11 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/upcoming-appointments/Trainer/:name" do
-    #alyse_lessons = alyse.lessons.map {|lesson| lesson.dog_classes}.flatten.uniq{|l| l[:date]}
-    # above is all appointments (and unique) - should we get all appointments, and then return the names of the dogs in each?
-    # DogClass.where(date: (Date.today)..(Date.today + 30), trainer: Trainer.find_by(name: "Alyse"))
-    # attempting to call from DogClass instead, need to get from lesson to trainer
-    Trainer.find_by(name: params[:name]).lessons.map {|lesson| lesson.dog_classes}.flatten.to_json
-    # currently showing ALL appointments of a trainer
+    Trainer.find_by(name: params[:name]).lessons.map {|lesson| lesson.dog_classes}.flatten.filter{|l| l.date > Date.today}.to_json
   end
 
   get "/upcoming-appointments/Owner/:name" do
-    Owner.find_by(name: params[:name]).dogs.map {|dog| dog.dog_classes}.flatten.to_json
-    # currently showing ALL appointments of an owner
+    Owner.find_by(name: params[:name]).dogs.map {|dog| dog.dog_classes}.flatten.filter{|l| l.date > Date.today}.to_json
   end
 
   post "/appointments" do
