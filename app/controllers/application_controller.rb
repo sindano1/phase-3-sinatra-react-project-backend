@@ -95,7 +95,7 @@ class ApplicationController < Sinatra::Base
 
   get "/dogs/Owner/:name" do
     # as an Owner, "name" wants to see their dogs
-    specified_owner = (params[:category]).find_by(name: params[:name])
+    specified_owner = Owner.find_by(name: params[:name])
     specified_owner.dogs.to_json
   end
 
