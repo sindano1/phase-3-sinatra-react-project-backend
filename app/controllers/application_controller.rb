@@ -45,7 +45,8 @@ class ApplicationController < Sinatra::Base
   end
 
   patch "/lessons/:id" do
-    Lesson.find(params[:id]).update(params).to_json
+    Lesson.find(params[:id]).update(params)
+    Lesson.find(params[:id]).to_json
   end
   
   delete '/lessons/:id' do
