@@ -33,9 +33,9 @@ d14 = Dog.create(name: "Chris", age: 2, breed: "golden")
 puts "dogs seeded."
 
 puts "Seeding dog classes"
-c1 = DogClass.create(date: Date.new(2022, 04, 31), lesson_id: l1.id, dog_id: d12.id)
-c2 = DogClass.create(date: Date.new(2022, 04, 31), lesson_id: l1.id, dog_id: d14.id)
-c3 = DogClass.create(date: Date.new(2022, 04, 31), lesson_id: l1.id, dog_id: d2.id)
+c1 = DogClass.create(date: Date.new(2022, 04, 30), lesson_id: l1.id, dog_id: d12.id)
+c2 = DogClass.create(date: Date.new(2022, 04, 30), lesson_id: l1.id, dog_id: d14.id)
+c3 = DogClass.create(date: Date.new(2022, 04, 30), lesson_id: l1.id, dog_id: d2.id)
 
 c4 = DogClass.create(date: Date.new(2022, 05, 15), lesson_id: l2.id, dog_id: d6.id)
 c5 = DogClass.create(date: Date.new(2022, 05, 15), lesson_id: l2.id, dog_id: d10.id)
@@ -49,11 +49,11 @@ c10 = DogClass.create(date: Date.new(2022, 05, 01), lesson_id: l3.id, dog_id: d5
 c11 = DogClass.create(date: Date.new(2022, 05, 01), lesson_id: l3.id, dog_id: d4.id)
 
 c12 = DogClass.create(date: Date.new(2022, 04, 22), lesson_id: l4.id, dog_id: d4.id)
-c13 = DogClass.create(date: Date.new(2022, 04, 31), lesson_id: l4.id, dog_id: d3.id)
+c13 = DogClass.create(date: Date.new(2022, 04, 30), lesson_id: l4.id, dog_id: d3.id)
 
 c14 = DogClass.create(date: Date.new(2022, 05, 13), lesson_id: l5.id, dog_id: d3.id)
 c15 = DogClass.create(date: Date.new(2022, 05, 14), lesson_id: l5.id, dog_id: d4.id)
-c16 = DogClass.create(date: Date.new(2022, 04, 31), lesson_id: l5.id, dog_id: d8.id)
+c16 = DogClass.create(date: Date.new(2022, 04, 30), lesson_id: l5.id, dog_id: d8.id)
 
 c17 = DogClass.create(date: Date.new(2022, 05, 16), lesson_id: l6.id, dog_id: d3.id)
 c18 = DogClass.create(date: Date.new(2022, 05, 16), lesson_id: l6.id, dog_id: d4.id)
