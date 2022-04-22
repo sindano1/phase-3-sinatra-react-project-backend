@@ -63,6 +63,10 @@ class ApplicationController < Sinatra::Base
     DogClass.where(date: (Date.today)..(Date.today + 30)).to_json
   end
 
+  get "/upcoming-appointments/:dog_id" do
+    DogClass.where(dog_id: params[:dog_id]).to_json(include: :lesson)
+  end
+
   get "/upcoming-appointments/Trainer/:name" do
     Trainer.find_by(name: params[:name]).lessons.map {|lesson| lesson.dog_classes}.flatten.filter{|l| l.date > Date.today}.to_json
   end
@@ -75,6 +79,12 @@ class ApplicationController < Sinatra::Base
     new_appointment = {**params, "lesson" => Lesson.find_by(title: params[:lesson]), "dog" => Dog.find_by(name: params[:dog])}
     DogClass.create(new_appointment).to_json
   end 
+
+  delete '/appointments/:id' do
+    DogClass.destroy(params[:id]).to_json
+  end
+
+
 
 
 
